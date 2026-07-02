@@ -93,7 +93,7 @@ export function HeroSection() {
           style={{ gridArea: "cta" }}
         >
           <a
-            href="#"
+            href="#pricing"
             className="inline-block rounded-full bg-[#F95B80] px-10 py-[30px] text-[18px] font-semibold uppercase tracking-[2px] text-white transition-transform active:translate-y-0.5"
           >
             ПОЛУЧИТЬ МЕТОД

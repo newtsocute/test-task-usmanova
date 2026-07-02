@@ -54,7 +54,7 @@ export function HeroSection() {
           style={{ gridArea: "cta" }}
         >
           <a
-            href="https://usmanovafit.gymteam.ru/maysale2026_7"
+            href="/method_july"
             className="inline-block rounded-[100px] bg-[#f66297] px-10 py-[30px] text-[18px] font-semibold uppercase tracking-[2px] text-white transition-transform active:translate-y-0.5"
           >
             Выбрать программу

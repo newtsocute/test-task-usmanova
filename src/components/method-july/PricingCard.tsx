@@ -24,7 +24,8 @@ export function PricingCard({
   period,
   items,
   buttonText,
-}: PricingCardProps) {
+  onSelect,
+}: PricingCardProps & { onSelect: () => void }) {
   return (
     <div className="flex h-full flex-col">
       <div
@@ -87,12 +88,13 @@ export function PricingCard({
         </ul>
       </div>
 
-      <a
-        href="#"
+      <button
+        type="button"
+        onClick={onSelect}
         className="mt-4 block w-full rounded-full bg-[#F95B80] py-4 text-center text-base font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-90"
       >
         {buttonText}
-      </a>
+      </button>
     </div>
   );
 }

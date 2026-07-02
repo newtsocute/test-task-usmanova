@@ -90,7 +90,7 @@ export function BundleCardsSection() {
 
       <div className="mt-10 flex justify-center">
         <a
-          href="#"
+          href="#pricing"
           className="rounded-full bg-[#F95B80] px-10 py-4 text-[14px] font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-90 sm:text-[16px]"
         >
           Выбрать тариф

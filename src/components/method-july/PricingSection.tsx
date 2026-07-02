@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { PricingCard, type PricingCardProps } from "./PricingCard";
+import { TariffLeadModal, type TariffLeadModalTariff } from "./TariffLeadModal";
 
 const TARIFFS: PricingCardProps[] = [
   {
@@ -112,9 +113,11 @@ function useCountdown(): CountdownState {
 
 export function PricingSection() {
   const { hours, minutes, seconds } = useCountdown();
+  const [selectedTariff, setSelectedTariff] =
+    useState<TariffLeadModalTariff | null>(null);
 
   return (
-    <section className="bg-[#fce7ec] px-4 py-16 md:py-20">
+    <section id="pricing" className="bg-[#fce7ec] px-4 py-16 md:py-20">
       <h2 className="text-center text-[28px] font-medium leading-[1.2] text-black md:text-[32px] md:leading-[38.4px]">
         ВЫБЕРИТЕ ФОРМАТ
         <br />
@@ -160,7 +163,11 @@ export function PricingSection() {
 
       <div className="mx-auto mt-10 grid max-w-[1200px] grid-cols-1 items-start gap-6 lg:grid-cols-3 lg:gap-[30px]">
         {TARIFFS.map((tariff) => (
-          <PricingCard key={tariff.title} {...tariff} />
+          <PricingCard
+            key={tariff.title}
+            {...tariff}
+            onSelect={() => setSelectedTariff(tariff)}
+          />
         ))}
       </div>
 
@@ -191,6 +198,11 @@ export function PricingSection() {
           </p>
         </div>
       </div>
+
+      <TariffLeadModal
+        tariff={selectedTariff}
+        onClose={() => setSelectedTariff(null)}
+      />
     </section>
   );
 }
